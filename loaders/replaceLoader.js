@@ -10,6 +10,15 @@ module.exports = function(source){
     return source.replace('dell','dellLee')
 */
     const options = loaderUtils.getOptions(this);
-    return source.replace('dell',options.name)
+    const result= source.replace('dell',options.name)
+
+    this.callback(null,result)
     
 }
+// 代替return，返回更多的东西
+// this.callback(
+//     err: Error | null,
+//     content: string | Buffer,
+//     sourceMap?: SourceMap,
+//     meta?: any
+//   );
